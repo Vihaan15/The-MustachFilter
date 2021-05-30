@@ -1,3 +1,8 @@
+noseX=0;
+noseY=0;
+
+
+
 function setup(){
     canvas = createCanvas(300, 300);
     canvas.center();
@@ -30,4 +35,23 @@ fill(83,40,10);
 stroke(83,40,40);
 circle(300, 300, 50);
 
+}
+function modleLoaded(){
+    console.log('PoseNet Is Initialized');
+}
+
+function gotPoses(results){
+    if(results.length > 0)
+    {
+        console.log(results);
+        noseX = results[0].pose.nose.x;
+        noseY = results[0].pose.nose.y;
+        console.log("nose x = " +noseX)
+        console.log("nose y = " +noseY)
+    }
+}
+
+
+function take_snapshot(){
+    save('myFilterImage.png');
 }
