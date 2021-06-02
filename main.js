@@ -1,5 +1,5 @@
-noseX=0;
-noseY=0;
+upper_noseX=0;
+upper_noseY=0;
 
 
 
@@ -44,10 +44,10 @@ function gotPoses(results){
     if(results.length > 0)
     {
         console.log(results);
-        noseX = results[0].pose.nose.x;
-        noseY = results[0].pose.nose.y;
-        console.log("nose x = " +noseX)
-        console.log("nose y = " +noseY)
+        noseX = results[0].pose.upper_nose.x;
+        noseY = results[0].pose.upper_nose.y;
+        console.log("upper_nose x = " +upper_noseX)
+        console.log("upper_nose y = " +upper_noseY)
     }
 }
 
